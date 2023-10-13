@@ -14,7 +14,7 @@ public class NeighborhoodLibrary {
         Scanner kbScanner = new Scanner(System.in);
         System.out.print("Please enter the ID of the book you are returning: ");
         int returnID = kbScanner.nextInt();
-        libraryArray[returnID].setCheckedOut(false);
+        libraryArray[returnID-1].setCheckedOut(false);
         System.out.println("Thank You!");
         homeScreen();
     }
@@ -63,7 +63,7 @@ public class NeighborhoodLibrary {
                 System.out.print("ID:" + book.getId() + "\tISBN:" + book.getIsbn() + "\tTitle:" + book.getTitle()+"\n");
             }
         }
-        System.out.print("\nPlease select an option!\n\t1) Check In A Book\n\t2) Go Back To Home Screen\nUser Input: ");
+        System.out.print("\nPlease select an option!\n\t1) Check Out A Book\n\t2) Go Back To Home Screen\nUser Input: ");
         int choice = kbScanner.nextInt();
         switch (choice) {
             case 1 -> checkOutBook();
